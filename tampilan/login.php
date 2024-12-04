@@ -42,7 +42,7 @@ if (isset($_SESSION['username'])) {
                 <h2>Welcome back!</h2>
                 <h4>Please sign in to continue</h4>
 
-                <form action="/proses/proses_login.php" method="post">
+                <form action="../proses/proses_login.php" method="post">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>

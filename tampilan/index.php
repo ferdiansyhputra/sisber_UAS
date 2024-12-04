@@ -1,5 +1,6 @@
-<?php
-session_start();
+<?php 
+
+session_start(); 
 
 // Redirect to login.php if the user is not logged in
 if (!isset($_SESSION['username'])) {
@@ -21,10 +22,10 @@ if (!isset($_SESSION['username'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-ti-fit=no">
     
-    <link href="/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="/lib/typicons.font/typicons.css" rel="stylesheet">
-    <link href="/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -51,7 +52,7 @@ if (!isset($_SESSION['username'])) {
     <!-- az-header-menu-header -->
 
     <h2>Selamat datang, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-    <p><a href="/proses/proses_logout.php">Logout</a></p>
-    <script src="/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <p><a href="../proses/proses_logout.php">Logout</a></p>
+    <script src="../js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
