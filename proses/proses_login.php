@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
 
 } else { 
 
- echo "Login gagal. <a href='login.php'>Coba lagi</a>"; 
+ echo "Login gagal. <a href='../tampilan/login.php'>Coba lagi</a>"; 
 
 } 
 
