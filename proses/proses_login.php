@@ -1,27 +1,31 @@
 <?php 
 
-session_start(); 
+session_start(); // Panggil session_start() hanya di sini
 
 include("koneksi.php"); 
 
 $username = $_POST['username']; 
-
 $password = $_POST['password']; 
 
-$sql = "SELECT * FROM user WHERE username='$username' AND password='$password'"; 
+// Gunakan query untuk mengambil data pengguna
+$sql = "SELECT * FROM user WHERE username = ?"; 
+$stmt = $conn->prepare($sql); 
+$stmt->bind_param("s", $username); 
+$stmt->execute(); 
+$result = $stmt->get_result(); 
 
-$result = $conn->query($sql); 
-
+// Periksa apakah ada hasil dan verifikasi password
 if ($result->num_rows > 0) { 
-
- $_SESSION['username'] = $username; 
-
- header("Location: ../tampilan/index.php"); 
-
+    $user = $result->fetch_assoc(); 
+    // Verifikasi password yang di-hash dengan password yang dimasukkan
+    if (password_verify($password, $user['password'])) { 
+        $_SESSION['username'] = $username; 
+        header("Location: ../tampilan/index.php"); 
+    } else { 
+        echo "Login gagal. Password salah. <a href='../tampilan/login.php'>Coba lagi</a>"; 
+    } 
 } else { 
-
- echo "Login gagal. <a href='login.php'>Coba lagi</a>"; 
-
+    echo "Login gagal. Pengguna tidak ditemukan. <a href='../tampilan/login.php'>Coba lagi</a>"; 
 } 
 
 $conn->close(); 

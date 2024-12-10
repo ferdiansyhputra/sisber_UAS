@@ -2,17 +2,54 @@
 
 session_start(); 
 
-if (!isset($_SESSION['username'])) { 
+// Redirect to login.php if the user is not logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
- header("Location: login.php"); 
+        gtag('config', 'UA-90680653-2');
+    </script>
 
-} 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-ti-fit=no">
+    
+    <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
 
-?> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!DOCTYPE html> 
+    <!-- az-header left -->
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="index.html" class="az-logo"><span></span>Logo</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div>
+        </div>
+    </div>
+    <!-- az-header-left -->
 
-<html lang="en"> 
+    <!-- az-header-menu-header -->
+    <div class="az-header-menu">
+        <div class="az-header-menu-header">
+            <a href="az-header-menu-header" class="az-logo"><span></span>Logo</a>
+            <a href="" class="close">&times;</a>
+        </div>
+    </div>
+    <!-- az-header-menu-header -->
 
 <head> 
 
