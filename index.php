@@ -39,8 +39,8 @@ if (!isset($_SESSION['username'])) {
     <div class="az-header">
         <div class="container">
             <div class="az-header-left">
-                <a href="#" class="az-logo"><span></span>Logo</a>
-                <a href="#" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+                <a href="index.html" class="az-logo"><span></span>Logo</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
             </div>
         </div>
     </div>
